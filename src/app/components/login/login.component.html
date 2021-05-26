@@ -9,21 +9,27 @@
         <div class="use-para">
             <span>Use your Fundoo Account</span>
         </div>
-        <form class="login-form">
+        <form class="login-form" [formGroup]="form" (ngSubmit)="submit()">
             <div class="login-email">
                 <mat-form-field appearance="outline" class="element">
-                    <mat-label>Email or Username</mat-label>
-                    <input matInput placeholder="Email or Username">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Email" formControlName="email">
                     <mat-icon matSuffix></mat-icon>
                     <mat-hint></mat-hint>
+                    <mat-error *ngIf="form.controls.email.errors.required">Email is a required field
+                    </mat-error>
+                    <mat-error *ngIf="form.controls.email.errors.pattern">Enter correct email</mat-error>
                 </mat-form-field>
             </div>
             <div class="login-password">
                 <mat-form-field appearance="outline" class="element">
                     <mat-label>Password</mat-label>
-                    <input matInput placeholder="Password">
+                    <input matInput placeholder="Password" formControlName="password">
                     <mat-icon matSuffix></mat-icon>
                     <mat-hint></mat-hint>
+                    <mat-error *ngIf="form.controls.password.errors.required">Password is a required field
+                    </mat-error>
+                    <mat-error *ngIf="form.controls.password.errors.pattern">Enter Correct Password</mat-error>
                 </mat-form-field>
             </div>
         </form>
@@ -34,7 +40,7 @@
                 </a>
             </div>
             <div class="login-buttons">
-                <button class="login-button" mat-flat-button color="primary">Primary</button>
+                <button type="submit" class="login-button" mat-flat-button color="primary">Primary</button>
             </div>
         </div>
     </div>
