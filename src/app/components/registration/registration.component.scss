@@ -2,8 +2,8 @@
     display: inline-block;
     font-size: 100px;
     font-weight: 700;
-    padding: 40 40 40 40;
-    font-size: large;
+    padding-bottom: 3%;
+    font-size: 1.5em;
 }
   
 .f {
@@ -15,7 +15,7 @@
 }
   
 .n {
-    color: rgb(190, 190, 24);
+    color: yellow;
 }
   
 .d {
@@ -28,4 +28,62 @@
   
 .o2 {
     color: red;
+}
+
+.form-container {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0.1px solid #b3b2b2;
+    border-radius: 10px;
+    width: 36.5%;  
+    height: 55%;
+    padding: 2%;
+    background-color: white;
+}
+
+.head{
+    font-size: 2em;
+    font-weight: 1;
+}
+
+.name {
+    display: inline-block;
+    width: 50%;
+    padding-bottom: 5%;
+}
+  
+.password {
+    display: inline-block;
+    width: 50%;
+    padding-bottom: 20%;
+}
+
+.email {
+    padding-bottom: 5%;
+}
+
+.lastelement {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-content{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    align-items: center;
+    padding-left: 10%;
+    padding-top: 10%;
+    text-align: center;
+}
+
+.image-text {
+    color: #202124;
+    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+    font-size: 16px;
+    font-weight: 300;
 }
