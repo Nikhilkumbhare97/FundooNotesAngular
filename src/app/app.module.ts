@@ -9,11 +9,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { LoginComponent } from './components/login/login.component';
+import { FundooLogoComponent } from './components/fundoo-logo/fundoo-logo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    LoginComponent,
+    FundooLogoComponent
   ],
   imports: [
     BrowserModule,

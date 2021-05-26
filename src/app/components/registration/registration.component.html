@@ -1,69 +1,75 @@
 <div class="form-container">
-    <form class="form-content">
+    <form class="form-content" [formGroup]="form" (ngSubmit)="submit()">
         <div>
-            <div class="header-content">
-                <span class="f">F</span>
-                <span class="u">U</span>
-                <span class="n">N</span>
-                <span class="d">D</span>
-                <span class="o">O</span>
-                <span class="o2">O</span>
-            </div>
+            <app-fundoo-logo></app-fundoo-logo>
             <div class="head">
                 <h2>Create Your Fundoo Account</h2>
             </div>
 
-            <div class="name">
-                <mat-form-field appearance="outline">
-                    <mat-label>First name</mat-label>
-                    <input matInput placeholder="First name">
-                    <mat-icon matSuffix></mat-icon>
-                    <mat-hint>Hint</mat-hint>
-                </mat-form-field>
-            </div>
+            <div class="names">
+                <div class="name">
+                    <mat-form-field appearance="outline" class="element">
+                        <mat-label>First name</mat-label>
+                        <input matInput placeholder="First name" formControlName="firstname">
+                        <mat-icon matSuffix></mat-icon>
+                        <mat-error *ngIf="form.controls.firstname.errors.required">First Name is a required field
+                        </mat-error>
+                        <mat-error *ngIf="form.controls.firstname.errors.pattern">Invalid format</mat-error>
+                    </mat-form-field>
+                </div>
 
-            <div class="name">
-                <mat-form-field appearance="outline">
-                    <mat-label>Last name</mat-label>
-                    <input matInput placeholder="Last name">
-                    <mat-icon matSuffix></mat-icon>
-                    <mat-hint>Hint</mat-hint>
-                </mat-form-field>
+                <div class="name">
+                    <mat-form-field appearance="outline" class="element">
+                        <mat-label>Last name</mat-label>
+                        <input matInput placeholder="Last name" formControlName="lastname">
+                        <mat-icon matSuffix></mat-icon>
+                        <mat-error *ngIf="form.controls.firstname.errors.required">Last Name is a required field
+                        </mat-error>
+                        <mat-error *ngIf="form.controls.firstname.errors.pattern">Invalid format</mat-error>
+                    </mat-form-field>
+                </div>
             </div>
-
 
             <div class="email">
-                <mat-form-field appearance="outline">
+                <mat-form-field appearance="outline" class="element">
                     <mat-label>Email</mat-label>
-                    <input matInput placeholder="Email">
-                    <mat-icon matSuffix>gmail.com</mat-icon>
-                    <mat-hint>Hint</mat-hint>
-                </mat-form-field>
-            </div>
-
-
-            <div class="password">
-                <mat-form-field appearance="outline">
-                    <mat-label>Password</mat-label>
-                    <input matInput placeholder="Password">
+                    <input matInput placeholder="Email" formControlName="email">
                     <mat-icon matSuffix></mat-icon>
-                    <mat-hint>Hint</mat-hint>
+                    <mat-hint>You can use letters, numbers & periods</mat-hint>
+                    <mat-error *ngIf="form.controls.firstname.errors.required">Email is a required field
+                    </mat-error>
+                    <mat-error *ngIf="form.controls.firstname.errors.pattern">Choose correct email between 6 to 30
+                        characters</mat-error>
                 </mat-form-field>
             </div>
 
-            <div class="password">
-                <mat-form-field appearance="outline">
-                    <mat-label>Confirm</mat-label>
-                    <input matInput placeholder="Confirm">
-                    <mat-icon matSuffix></mat-icon>
-                    <mat-hint>Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
-                </mat-form-field>
-            </div>
+            <div class="pass">
+                <div class="password">
+                    <mat-form-field appearance="outline" class="element">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Password" formControlName="password">
+                        <mat-icon matSuffix></mat-icon>
+                        <mat-error *ngIf="form.controls.firstname.errors.required">Password is a required field
+                        </mat-error>
+                        <mat-error *ngIf="form.controls.firstname.errors.pattern">Use 8 characters or more for your
+                            password</mat-error>
+                    </mat-form-field>
+                </div>
 
+                <div class="password">
+                    <mat-form-field appearance="outline" class="element">
+                        <mat-label>Confirm</mat-label>
+                        <input matInput placeholder="Confirm" formControlName="confirmPassword">
+                        <mat-icon matSuffix></mat-icon>
+                        <mat-error *ngIf="form.controls.confirmPassword.errors.required"><strong>Required</strong> confirmation
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
 
             <div class="lastelement">
                 <div>
-                    <a href="" class="line">Sign in instead</a>
+                    <a href="app\components\login\login.component.html" class="line">Sign in instead</a>
                 </div>
                 <div class="button">
                     <button type="submit" mat-flat-button color="next">Next</button>
