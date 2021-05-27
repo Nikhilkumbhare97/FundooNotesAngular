@@ -9,6 +9,7 @@ const PASSWORD_REGEX = new RegExp('^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=[^$@!#%*
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  
   constructor() { }
 
   form = new FormGroup({
