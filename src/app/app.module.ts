@@ -12,13 +12,15 @@ import { MatInputModule } from '@angular/material/input';
 import { LoginComponent } from './components/login/login.component';
 import { FundooLogoComponent } from './components/fundoo-logo/fundoo-logo.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
-    FundooLogoComponent
+    FundooLogoComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
