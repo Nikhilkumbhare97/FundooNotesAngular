@@ -13,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { FundooLogoComponent } from './components/fundoo-logo/fundoo-logo.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     RegistrationComponent,
     LoginComponent,
     FundooLogoComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
