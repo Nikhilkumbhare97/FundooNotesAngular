@@ -10,8 +10,9 @@ export class HttpServiceService {
 
   constructor(private httpclient: HttpClient) { }
 
-  Post(url: string, data: any, isHeaderRequired: any = false, headers = null) {
-    return this.httpclient.post(url, data, isHeaderRequired && headers)
+  Post(url: string, data: any, options : any) {
+    console.log(options)
+    return this.httpclient.post(url, data, options)
   }
 
   Get(url: string, isHeaderRequired: any = false, headers = null) {

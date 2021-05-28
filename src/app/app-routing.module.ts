@@ -8,25 +8,32 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 
 const routes: Routes = [
   {
-    path: "login",
-    component: LoginComponent
+    path: "",
+    redirectTo: 'register',
+    pathMatch: 'full'
   },
   {
     path: "register",
     component: RegistrationComponent
   },
   {
+    path: "login",
+    component: LoginComponent
+  },
+  {
     path: "forgotpassword",
     component: ForgotPasswordComponent
   },
   {
-    path: "resetpassword",
+    path: "resetpassword/:token",
     component: ResetPasswordComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabled'
+})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

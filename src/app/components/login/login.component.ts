@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserServiceService } from 'src/app/service/userService/user-service.service';
 
 const PASSWORD_REGEX = new RegExp('^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=[^$@!#%*?&]*[$#@!%*?&][^$@!#%*?&]*$).{8,}');
 
@@ -9,8 +10,8 @@ const PASSWORD_REGEX = new RegExp('^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=[^$@!#%*
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  
-  constructor() { }
+
+  constructor(private userService: UserServiceService) { }
 
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -21,8 +22,16 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submit(): void {
-    console.log("error");
+  submit() {
+    let data = {
+      email: this.form.controls.email.value,
+      password: this.form.controls.password.value,
+    }
+
+    console.log(data);
+    this.userService.loginToFundoo(data).subscribe((res) => {
+      console.log(res);
+    })
   }
 
 }

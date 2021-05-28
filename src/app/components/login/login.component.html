@@ -16,9 +16,10 @@
                     <input matInput placeholder="Email" formControlName="email">
                     <mat-icon matSuffix></mat-icon>
                     <mat-hint></mat-hint>
-                    <mat-error *ngIf="form.controls.email.errors.required">Email is a required field
-                    </mat-error>
-                    <mat-error *ngIf="form.controls.email.errors.pattern">Enter correct email</mat-error>
+                    <!-- <mat-error *ngIf="form.controls.email.errors.required">Email is a required field
+                    </mat-error> -->
+                    <!-- <mat-error *ngIf="form.controls.email.errors.pattern">Choose correct email between 6 to 30
+                        characters</mat-error> -->
                 </mat-form-field>
             </div>
             <div class="login-password">
@@ -27,20 +28,21 @@
                     <input matInput placeholder="Password" formControlName="password">
                     <mat-icon matSuffix></mat-icon>
                     <mat-hint></mat-hint>
-                    <mat-error *ngIf="form.controls.password.errors.required">Password is a required field
-                    </mat-error>
-                    <mat-error *ngIf="form.controls.password.errors.pattern">Enter Correct Password</mat-error>
+                    <!-- <mat-error *ngIf="form.controls.password.errors.required">Password is a required field
+                    </mat-error> -->
                 </mat-form-field>
             </div>
+
+            <div class="login-last-element">
+                <div class="create-account">
+                    <a routerLink="/forgotpassword">
+                        <span class="last-text">Forgot Password ?</span>
+                    </a>
+                </div>
+                <div class="login-buttons">
+                    <button type="submit" class="login-button" mat-flat-button color="next">Next</button>
+                </div>
+            </div>
         </form>
-        <div class="login-last-element">
-            <div class="create-account">
-                <a href="">
-                    <span class="last-text">Create account</span>
-                </a>
-            </div>
-            <div class="login-buttons">
-                <button type="submit" class="login-button" mat-flat-button color="primary">Primary</button>
-            </div>
-        </div>
+
     </div>

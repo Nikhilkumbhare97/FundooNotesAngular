@@ -25,7 +25,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     ResetPasswordComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
