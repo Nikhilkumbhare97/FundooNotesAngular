@@ -19,14 +19,16 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   submit() {
-    let data = {
-      email: this.form.controls.email.value,
-    }
+    if (this.form.valid) {
+      let data = {
+        email: this.form.controls.email.value,
+      }
 
-    console.log(data);
-    this.userService.forgotPassword(data).subscribe((res) => {
-      console.log(res);
-    })
+      console.log(data);
+      this.userService.forgotPassword(data).subscribe((res) => {
+        console.log(res);
+      })
+    }
   }
 
 }

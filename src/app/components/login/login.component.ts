@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserServiceService } from 'src/app/service/userService/user-service.service';
 
+
 const PASSWORD_REGEX = new RegExp('^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=[^$@!#%*?&]*[$#@!%*?&][^$@!#%*?&]*$).{8,}');
 
 @Component({
@@ -23,15 +24,17 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    let data = {
-      email: this.form.controls.email.value,
-      password: this.form.controls.password.value,
-    }
+    if (this.form.valid) {
+      let data = {
+        email: this.form.controls.email.value,
+        password: this.form.controls.password.value,
+      }
 
-    console.log(data);
-    this.userService.loginToFundoo(data).subscribe((res) => {
-      console.log(res);
-    })
+      console.log(data);
+      this.userService.loginToFundoo(data).subscribe((res) => {
+        console.log(res);
+      })
+    }
   }
 
 }
