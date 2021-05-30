@@ -59,12 +59,12 @@
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
   .login-container {
     left: 30%;
-    top: 20%;
+    top: 23%;
     width: 40%;
-    height: 60%;
+    height: 54%;
   }
 
     .last-text {
@@ -85,7 +85,7 @@
   }
 }
 
-@media screen and (max-width: 330px) {
+@media screen and (max-width: 500px) {
   .login-last-element {
     flex-direction: column;
     align-items: center;
