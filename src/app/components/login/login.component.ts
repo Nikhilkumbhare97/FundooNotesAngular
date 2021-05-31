@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { Router } from '@angular/router'
 import { UserServiceService } from 'src/app/service/userService/user-service.service';
 
 
@@ -14,7 +15,7 @@ const PASSWORD_REGEX = new RegExp('^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=[^$@!#%*
 export class LoginComponent implements OnInit {
   hide = true;
 
-  constructor(private userService: UserServiceService, public snackBar: MatSnackBar) { }
+  constructor(private userService: UserServiceService, public snackBar: MatSnackBar, private router: Router) { }
 
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -42,7 +43,7 @@ export class LoginComponent implements OnInit {
 
       console.log(data);
       this.userService.loginToFundoo(data).subscribe(response => {
-        this.openSnackBar('Login successful', 3000);
+        this.openSnackBar('Login successful', 2000);
         console.log(response);
       },
         error => {
@@ -57,6 +58,7 @@ export class LoginComponent implements OnInit {
           catch (error) {
           }
         });
+        this.router.navigate(['/dashboard']);
     }
   }
 

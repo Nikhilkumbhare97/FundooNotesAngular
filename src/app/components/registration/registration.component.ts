@@ -54,8 +54,8 @@ export class RegistrationComponent implements OnInit {
 
       console.log(data);
       this.userService.registerUser(data).subscribe(response => {
-        console.log("register successfull", response);
-        this.openSnackBar('Registration successful', 2000);
+        console.log(response);
+        this.openSnackBar('Registration successful', 3000);
       },
         error => {
           if (error['status'] == 0) {

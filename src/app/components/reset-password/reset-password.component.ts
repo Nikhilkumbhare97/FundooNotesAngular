@@ -13,13 +13,21 @@ const PASSWORD_REGEX = new RegExp('^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=[^$@!#%*
 })
 export class ResetPasswordComponent implements OnInit {
   hide = true;
-
-  constructor(private userService: UserServiceService, private route: ActivatedRoute, public snackBar: MatSnackBar) { }
+ 
+  constructor(private userService: UserServiceService, private route: ActivatedRoute, public snackBar: MatSnackBar, private router: Router) { }
 
   form = new FormGroup({
     password: new FormControl('', [Validators.required, Validators.pattern(PASSWORD_REGEX)]),
     confirmPassword: new FormControl('', [Validators.required]),
-  }, { validators: this.checkPasswords });
+  },{ validators: this.checkPasswords },);
+  
+
+  checkPasswords(group: FormGroup) {
+    let pass = group.controls.password.value;
+    let confirmPass = group.controls.confirmPassword.value;
+  
+    return pass === confirmPass ? null : { notSame: true }
+  }
 
   openSnackBar(message: string, duration: number) {
     let config = new MatSnackBarConfig();
@@ -29,19 +37,11 @@ export class ResetPasswordComponent implements OnInit {
     this.snackBar.open(message, undefined, config);
   }
 
-  checkPasswords(group: FormGroup) {
-    let pass = group.controls.password.value;
-    let confirmPass = group.controls.confirmPassword.value;
-
-    return pass === confirmPass ? null : { notSame: true }
-  }
-
   ngOnInit(): void {
   }
 
   submit() {
     if (this.form.valid) {
-      this.openSnackBar('Resetting password...', 0);
       let token = this.route.snapshot.paramMap.get('token');
       console.log(token)
 
@@ -53,8 +53,9 @@ export class ResetPasswordComponent implements OnInit {
 
       console.log(data);
       this.userService.resetPassword(data, token).subscribe(response => {
-        this.openSnackBar('Password reset successful', 3000);
+        this.openSnackBar('Password reset successful', 2000);
         console.log(response);
+        this.router.navigate(['/login']);
       },
         error => {
           try {
