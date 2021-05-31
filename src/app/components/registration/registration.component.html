@@ -15,10 +15,8 @@
                     <mat-label>First name</mat-label>
                     <input matInput placeholder="First name" formControlName="firstname">
                     <mat-icon matSuffix></mat-icon>
-                    <!-- <mat-error *ngIf="form.controls.firstname.errors.required">
-                        First Name is a required field
-                    </mat-error> -->
-                    <!-- <mat-error *ngIf="form.controls.firstname.errors.pattern">Invalid format</mat-error> -->
+                    <mat-error *ngIf="form.controls.firstname.errors?.required">FirstName is a required field
+                    </mat-error>
                 </mat-form-field>
             </div>
 
@@ -27,10 +25,8 @@
                     <mat-label>Last name</mat-label>
                     <input matInput placeholder="Last name" formControlName="lastname">
                     <mat-icon matSuffix></mat-icon>
-                    <!-- <mat-error *ngIf="form.controls.lastname.errors.required">
-                        Last Name is a required field
-                    </mat-error> -->
-                    <!-- <mat-error *ngIf="lastname.error.pattern">Invalid Last Name</mat-error> -->
+                    <mat-error *ngIf="form.controls.lastname.errors?.required">LastName is a required field
+                    </mat-error>
                 </mat-form-field>
             </div>
         </div>
@@ -41,9 +37,8 @@
                 <input matInput placeholder="Email" formControlName="email">
                 <mat-icon matSuffix></mat-icon>
                 <mat-hint>You can use letters, numbers & periods</mat-hint>
-                <!-- <mat-error *ngIf="email.error.required">Email is <strong>required</strong>
+                <mat-error *ngIf="form.controls.email.errors?.required">Email is a required field
                 </mat-error>
-                <mat-error *ngIf="email.error.email">Invalid email</mat-error> -->
             </mat-form-field>
         </div>
 
@@ -51,22 +46,21 @@
             <div class="password">
                 <mat-form-field appearance="outline" class="element">
                     <mat-label>Password</mat-label>
-                    <input matInput placeholder="Password" formControlName="password">
-                    <mat-icon matSuffix></mat-icon>
-                    <!-- <mat-error *ngIf="password.error.required">Password <strong>required</strong>
+                    <input matInput placeholder="Password" [type]="hide ? 'password':'text'" formControlName="password">
+                    <mat-icon class="material-icons" matSuffix (click) = "hide = !hide">{{hide ? 'visibility':'visibility_off'}}</mat-icon>
+                    <mat-error *ngIf="form.controls.password.errors?.required">Password is a required field
                     </mat-error>
-                    <mat-error *ngIf="password.error.pattern">Invalid Password</mat-error> -->
                 </mat-form-field>
             </div>
 
             <div class="password">
                 <mat-form-field appearance="outline" class="element">
                     <mat-label>Confirm</mat-label>
-                    <input matInput placeholder="Confirm" formControlName="confirmPassword">
+                    <input matInput placeholder="Confirm" [type]="hide ? 'password':'text'" formControlName="confirmPassword">
                     <mat-icon matSuffix></mat-icon>
-                    <!-- <mat-error *ngIf="confirmPassword.error.required">
-                        <strong>Required</strong> confirmation
-                    </mat-error> -->
+                    <mat-error *ngIf="form.controls.confirmPassword.errors?.required">Confirm Password is a required
+                        field
+                    </mat-error>
                 </mat-form-field>
             </div>
         </div>
