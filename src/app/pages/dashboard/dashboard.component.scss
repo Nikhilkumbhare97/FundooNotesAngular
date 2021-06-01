@@ -1,0 +1,44 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: lightgrey;
+}
+
+.example-toolbar {
+  outline-style: solid;
+  outline-color: darkgrey;
+}
+
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  z-index: 2;
+  outline-style: solid;
+  outline-color: darkgray;
+}
+
+h1.example-app-name {
+  margin-left: 8px;
+  color: darkgray;
+  font-weight: bold;
+}
+
+.example-sidenav-container {
+  flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+  flex: 1 0 auto;
+}
+
+.mat-toolbar.mat-primary {
+  background: #fff;
+}
+
+.logo-image {
+  padding-left: 5px;
+}

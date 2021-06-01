@@ -3,24 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegistrationComponent } from './components/registration/registration.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { LoginComponent } from './components/login/login.component';
-import { FundooLogoComponent } from './components/fundoo-logo/fundoo-logo.component';
+import { LoginComponent } from './pages/login/login.component';
+import { FundooLogoComponent } from './pages/fundoo-logo/fundoo-logo.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -46,7 +46,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatToolbarModule,
     MatListModule,
     MatIconModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
