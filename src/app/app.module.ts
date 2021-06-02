@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { LoginComponent } from './pages/login/login.component';
-import { FundooLogoComponent } from './pages/fundoo-logo/fundoo-logo.component';
+import { FundooLogoComponent } from './components/fundoo-logo/fundoo-logo.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
@@ -21,6 +21,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { IconsComponent } from './components/icons/icons.component'
+import { DisplayComponent } from './components/display/display.component';
+import { MatCardModule } from '@angular/material/card';
+import { NoteComponent } from './components/note/note.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     FundooLogoComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    IconsComponent,
+    DisplayComponent,
+    NoteComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -47,7 +56,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatListModule,
     MatIconModule,
     MatCheckboxModule,
-
+    MatCardModule,
+    MatMenuModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
