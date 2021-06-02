@@ -22,11 +22,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { IconsComponent } from './components/icons/icons.component'
-import { DisplayComponent } from './components/display/display.component';
 import { MatCardModule } from '@angular/material/card';
 import { NoteComponent } from './components/note/note.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { NotesComponent } from './components/notes/notes.component'
 
 @NgModule({
   declarations: [
@@ -38,8 +38,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ResetPasswordComponent,
     DashboardComponent,
     IconsComponent,
-    DisplayComponent,
     NoteComponent,
+    NotesComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
