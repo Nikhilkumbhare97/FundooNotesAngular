@@ -1,4 +1,6 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, ElementRef, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NoteServiceService } from 'src/app/service/noteService/note-service.service';
 
 @Component({
@@ -7,60 +9,61 @@ import { NoteServiceService } from 'src/app/service/noteService/note-service.ser
   styleUrls: ['./note.component.scss']
 })
 export class NoteComponent implements OnInit {
-  pin : boolean = false;
-  fullEdit : boolean = false;
+  pin: boolean = false;
+  fullEdit: boolean = false;
 
   @Output() messageEvent = new EventEmitter<string>();
-  constructor(private eRef: ElementRef, private elRef:ElementRef, private NotesService:NoteServiceService) {  }
+  constructor(private eRef: ElementRef, private notesService: NoteServiceService, private route:ActivatedRoute) { }
   @HostListener('document:click', ['$event'])
   clickout(event: any) {
-    if(!this.eRef.nativeElement.contains(event.target)) {
+    if (!this.eRef.nativeElement.contains(event.target)) {
       this.fullEdit = false;
       this.createNote();
       (<HTMLInputElement>document.getElementById("note")).innerText = '';
     }
   }
 
-  takeNote(){
-    this.createNote();
-    this.fullEdit = false;
-    (<HTMLInputElement>document.getElementById("note")).innerText = '';
-  }
-  createNote(){
-    let reqData={
-      title :(<HTMLInputElement>document.getElementById("title"))?
-       (<HTMLInputElement>document.getElementById("title")).value:'',
-      text : (<HTMLInputElement>document.getElementById("note")).innerText.trim(),
-      IsPin: this.pin
-  }
-    if(reqData.text != ''){
-      this.NotesService.createNote(reqData).subscribe(
+  createNote() {
+    // let data = new FormData();
+   
+    let data =  {
+      title: (<HTMLInputElement>document.getElementById("title")) ?
+        (<HTMLInputElement>document.getElementById("title")).value : '',
+      description: (<HTMLInputElement>document.getElementById("note")).innerText.trim(),
+      isPined: this.pin
+    }
+  
+    console.log(data);
+    if (data.description != '') {
+      let id = localStorage.getItem('id');
+      console.log(id)
+      this.notesService.createNote(data, id).subscribe(
         (response: any) => {
-        console.log(response);
-          this.messageEvent.emit()
-      });;
+          console.log(response);
+          this.messageEvent.emit(response)
+        });;
     }
     this.pin = false
   }
 
-  ngAfterViewInit() {
+  ngOnInit(): void {
+
   }
 
-  ngOnInit(): void {
-    
+  togglePin() {
+    this.pin = !this.pin;
   }
-  
-  togglePin(){
-    this.pin = !this.pin; 
-  }
-  adjustHeight(event: any){
+
+  adjustHeight(event: any) {
     var target = event.target;
-   target.style.height = "1px";
-   target.style.height = (target.scrollHeight)+"px";
+    target.style.height = "1px";
+    target.style.height = (target.scrollHeight) + "px";
   }
-  displayFull(){
+
+  displayFull() {
     this.fullEdit = true;
   }
-  
 
 }
+
+

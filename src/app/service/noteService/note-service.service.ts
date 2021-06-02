@@ -9,14 +9,19 @@ import { HttpServiceService } from '../httpService/http-service.service';
 export class NoteServiceService {
 
   fundooUrl = environment.baseurl
-  headers = new HttpHeaders()
-  .set('Authorization', 'Bearer '+localStorage.getItem('FunDooNotesJWT')); 
-  options = { headers: this.headers };
+ 
   constructor(private httpService: HttpServiceService) { }
 
-  createNote(data: any) {
+  createNote(data: any, id: any) {
+    let options = {
+      headers: new HttpHeaders({
+        'Authorization': id,
+        'Content-type': 'application/json',
+        'Accept': 'application/json'        
+      })
+    }
 
-    return this.httpService.Post(`${this.fundooUrl}notes/addNotes`, data, this.options);
+    return this.httpService.Post(`${this.fundooUrl}notes/addNotes`, data, options);
   }
 
 }

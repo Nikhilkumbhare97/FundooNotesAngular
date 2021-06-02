@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
   submit() {
     if (this.form.valid) {
       this.openSnackBar('Login in Progress...', 0);
+      let array = [] as any;
       let data = {
         email: this.form.controls.email.value,
         password: this.form.controls.password.value,
@@ -45,6 +46,9 @@ export class LoginComponent implements OnInit {
       this.userService.loginToFundoo(data).subscribe(response => {
         this.openSnackBar('Login successful', 2000);
         console.log(response);
+        array = response
+        console.log(array.id)
+        localStorage.setItem('id', array.id)
       },
         error => {
           try {
