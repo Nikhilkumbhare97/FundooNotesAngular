@@ -1,15 +1,22 @@
 .card-container {
+    display: flex;
     margin-top: 25px;
+    padding: 2%;
+    padding-bottom: 5%;
+    flex-flow: wrap;
   }
   
-  .example-card {
-    min-width: 240px;
-    min-height: 100px;
-    max-height: 350px;
+  .notes {
+    padding: 0.5%;
+    padding-bottom: 2%;
+    width: 15.5%;
+    justify-content: space-between;
   }
   
   .card-content {
+    display: flex;
     margin: 25px 15px 10px 25px;
+    flex-flow:wrap;
   }
   
   .mat-card-header-text {
@@ -19,21 +26,16 @@
   }
   
   .div-card-content {
-    min-width: 240px;
-    min-height: 100px;
-    max-height: 350px;
+    width: 100%;
   }
   
   .title {
-    max-width: 240px;
-    max-height: 90px;
+    width: 100%;
     word-wrap: break-word;
   }
   
   .description {
-    margin-top: 5px;
-    max-width: 240px;
-    max-height: 200px;
+   width: 100%;
     word-wrap: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -46,6 +48,10 @@
   }
   
   .icons {
-    height: 60px;
+    height: 100%
+  }
+
+  .icon-int{
+    width: 100%;
   }
   

@@ -1,4 +1,4 @@
-import { Component, Inject, NgZone, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NoteServiceService } from 'src/app/service/noteService/note-service.service';
 
@@ -14,8 +14,7 @@ export class UpdateNoteComponent implements OnInit {
 
   constructor(private dialogRef: MatDialogRef<UpdateNoteComponent>,
     @Inject(MAT_DIALOG_DATA) public card: any,
-    private noteService : NoteServiceService,
-    private _ngZone: NgZone) {
+    private noteService : NoteServiceService) {
 
   }
   ngOnInit(): void {

@@ -3,7 +3,18 @@
     <div class="collaborator prop" role="button" matTooltip="Collaborator" matTooltipPosition='below'></div>
     <div class="back-img prop" role="button" matTooltip="Add image" matTooltipPosition='below'></div>
     <div class="archive prop" role="button" matTooltip="Archive" matTooltipPosition='below'></div>
-    <div class="more-opn prop" role="button" matTooltip="More" matTooltipPosition='below'></div>
-    <div class="undo prop" role="button" matTooltip="Undo" matTooltipPosition='below'></div>
-    <div class="redo prop" role="button" matTooltip="Redo" matTooltipPosition='below'></div>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>delete</mat-icon>
+          <span>Delete</span>
+        </button>
+  
+        <button mat-menu-item>
+          <mat-icon>label</mat-icon>
+          <span>Add Label</span>
+        </button>
+      </mat-menu>
 </div>

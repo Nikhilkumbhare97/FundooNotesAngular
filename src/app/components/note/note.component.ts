@@ -46,7 +46,6 @@ export class NoteComponent implements OnInit {
       this.sendEventToGetAllNotes.emit();
     }, (error: any) => {
       console.log(error);
-    
     })
   }
 
