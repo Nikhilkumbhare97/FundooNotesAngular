@@ -1,0 +1,25 @@
+<p>update-note works!</p>
+<div class="mainContainer" fxLayout="column" fxLayoutAlign="space-between stretch">
+    <div class="input-container" fxFlex="95%" fxLayout="column" fxLayoutAlign="space-between stretch">
+        <header class="title" fxFlex="15%">
+            <mat-form-field class="example-full-width">
+                <mat-label></mat-label>
+                <input matInput [(ngModel)]="title" placeholder="Title" />
+            </mat-form-field>
+        </header>
+
+        <div class="description" fxFlex="70%">
+            <mat-form-field class="example-full-width">
+                <mat-label></mat-label>
+                <textarea matInput [(ngModel)]="description" placeholder="Description" cdkTextareaAutosize
+                    #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3" cdkAutosizeMaxRows="6"></textarea>
+            </mat-form-field>
+        </div>
+
+        <div class="buttons" fxFlex="15%" fxLayout="column" fxLayoutAlign="center end">
+            <button type="submit" mat-raised-button color="bluish" (click)="submit()">
+                Done
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,4 @@
-import { stringify } from '@angular/compiler/src/util';
-import { Component, ElementRef, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NoteServiceService } from 'src/app/service/noteService/note-service.service';
 
@@ -9,61 +8,49 @@ import { NoteServiceService } from 'src/app/service/noteService/note-service.ser
   styleUrls: ['./note.component.scss']
 })
 export class NoteComponent implements OnInit {
-  pin: boolean = false;
-  fullEdit: boolean = false;
+  public title: any;
+  public description: any;
 
-  @Output() messageEvent = new EventEmitter<string>();
-  constructor(private eRef: ElementRef, private notesService: NoteServiceService, private route:ActivatedRoute) { }
-  @HostListener('document:click', ['$event'])
-  clickout(event: any) {
-    if (!this.eRef.nativeElement.contains(event.target)) {
-      this.fullEdit = false;
-      this.createNote();
-      (<HTMLInputElement>document.getElementById("note")).innerText = '';
-    }
-  }
+  @Input()
+  clicked: any;
+  @Output() sendEventToGetAllNotes = new EventEmitter<string>();
 
-  createNote() {
-    // let data = new FormData();
-   
-    let data =  {
-      title: (<HTMLInputElement>document.getElementById("title")) ?
-        (<HTMLInputElement>document.getElementById("title")).value : '',
-      description: (<HTMLInputElement>document.getElementById("note")).innerText.trim(),
-      isPined: this.pin
-    }
-  
-    console.log(data);
-    if (data.description != '') {
-      let id = localStorage.getItem('id');
-      console.log(id)
-      this.notesService.createNote(data, id).subscribe(
-        (response: any) => {
-          console.log(response);
-          this.messageEvent.emit(response)
-        });;
-    }
-    this.pin = false
+  @ViewChild('createCard')
+  card!: ElementRef;
+
+  constructor(private noteService: NoteServiceService,
+    private renderer: Renderer2) {
+    this.renderer.listen('window', 'click', (e: Event) => {
+      if (e.target === this.card.nativeElement) {
+        console.log("Outside");
+        console.log(this.card);
+        this.clicked = false;
+      }
+    })
   }
 
   ngOnInit(): void {
-
   }
 
-  togglePin() {
-    this.pin = !this.pin;
+  createNote() {
+    let id = localStorage.getItem('id')
+    this.clicked = !this.clicked
+    let data = {
+      title: this.title,
+      description: this.description
+    }
+    console.log(data)
+    console.log(id)
+    this.noteService.createNote(data, id).subscribe((response: any) =>{
+      console.log(response);
+      this.sendEventToGetAllNotes.emit();
+    }, (error: any) => {
+      console.log(error);
+    
+    })
   }
 
-  adjustHeight(event: any) {
-    var target = event.target;
-    target.style.height = "1px";
-    target.style.height = (target.scrollHeight) + "px";
+  insideCard(){
+    this.clicked = true;
   }
-
-  displayFull() {
-    this.fullEdit = true;
-  }
-
 }
-
-

@@ -20,13 +20,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { IconsComponent } from './components/icons/icons.component'
 import { MatCardModule } from '@angular/material/card';
 import { NoteComponent } from './components/note/note.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { NotesComponent } from './components/notes/notes.component'
+import { NotesComponent } from './components/notes/notes.component';
+import { NoteDisplayComponent } from './components/note-display/note-display.component';
+import { UpdateNoteComponent } from './components/update-note/update-note.component'
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import { NotesComponent } from './components/notes/notes.component'
     DashboardComponent,
     IconsComponent,
     NoteComponent,
-    NotesComponent
+    NoteDisplayComponent,
+    NotesComponent,
+    UpdateNoteComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -52,6 +57,7 @@ import { NotesComponent } from './components/notes/notes.component'
     HttpClientModule,
     MatSnackBarModule,
     MatSidenavModule,
+    MatDialogModule,
     MatToolbarModule,
     MatListModule,
     MatIconModule,

@@ -15,7 +15,7 @@ export class HttpServiceService {
     return this.httpclient.post(url, data, options)
   }
 
-  Get(url: string, isHeaderRequired: any = false, headers = null) {
-    return this.httpclient.get(url, isHeaderRequired && headers)
+  Get(url: string, options : any) {
+    return this.httpclient.get(url, options)
   }
 }

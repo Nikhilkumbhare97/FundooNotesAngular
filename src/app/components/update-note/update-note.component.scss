@@ -1,0 +1,77 @@
+::ng-deep .mat-form-field-underline {
+    display: none;
+  }
+  
+  .updateHeader {
+    background: hsl(221, 78%, 73%);
+  
+    .logo {
+      background: hsl(221, 78%, 73%);
+      padding: 1%;
+      margin-left: auto;
+      margin-right: auto;
+      margin: auto;
+      display: block;
+      align-items: center;
+      padding-top: 7px;
+    }
+  
+    .container-header {
+      font-weight: bold;
+      font-size: 20px;
+      align-items: center;
+      padding: 1%;
+      text-align: center;
+    }
+  
+    .close-button {
+      align-items: center;
+      padding: 1%;
+    }
+  }
+  
+  .input-container {
+    .title {
+      .mat-input-element {
+        font: inherit;
+        background: transparent;
+        font-size: 20px;
+        font-weight: 450;
+        color: currentColor;
+        border: none;
+        outline: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        vertical-align: bottom;
+        text-align: inherit;
+      }
+    }
+  
+    .description {
+      .mat-input-element {
+        font: inherit;
+        background: transparent;
+        font-size: 18px;
+        color: currentColor;
+        border: none;
+        outline: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        vertical-align: bottom;
+        text-align: inherit;
+      }
+    }
+  }
+  
+  .mat-bluish {
+    background-color: hsla(44, 100%, 48%, 0.993);
+    color: black;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }

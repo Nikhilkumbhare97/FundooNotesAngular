@@ -24,4 +24,25 @@ export class NoteServiceService {
     return this.httpService.Post(`${this.fundooUrl}notes/addNotes`, data, options);
   }
 
+  updateNotes(data: any, id: any) {
+    let options = {
+      headers: new HttpHeaders({
+        'Authorization': id,
+        'Content-type': 'application/json',
+        'Accept': 'application/json'
+
+      })
+    }
+    return this.httpService.Post(`${this.fundooUrl}notes/updateNotes`, data, options)
+  }
+
+  getAllNotes(id: any) {
+    let options = {
+      headers: new HttpHeaders({
+        'Authorization': id,
+        'Content-type': 'application/json'
+      })
+    }
+    return this.httpService.Get(`${this.fundooUrl}notes/getNotesList`, options)
+  }
 }

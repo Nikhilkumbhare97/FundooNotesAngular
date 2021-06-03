@@ -1,0 +1,51 @@
+.card-container {
+    margin-top: 25px;
+  }
+  
+  .example-card {
+    min-width: 240px;
+    min-height: 100px;
+    max-height: 350px;
+  }
+  
+  .card-content {
+    margin: 25px 15px 10px 25px;
+  }
+  
+  .mat-card-header-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .div-card-content {
+    min-width: 240px;
+    min-height: 100px;
+    max-height: 350px;
+  }
+  
+  .title {
+    max-width: 240px;
+    max-height: 90px;
+    word-wrap: break-word;
+  }
+  
+  .description {
+    margin-top: 5px;
+    max-width: 240px;
+    max-height: 200px;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .acitvate-overflow {
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .icons {
+    height: 60px;
+  }
+  
