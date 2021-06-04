@@ -6,8 +6,6 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NotesComponent } from './components/notes/notes.component';
-import { GetAllArchiveComponent } from './components/get-all-archive/get-all-archive.component';
-
 
 const routes: Routes = [
   {
@@ -37,7 +35,7 @@ const routes: Routes = [
     children: [
       {path: "", redirectTo: "notes", pathMatch: "full"},
       {path: "notes", component: NotesComponent},
-      {path: "archives", component: GetAllArchiveComponent},
+      {path: "archives", component: NotesComponent},
       {path: "trash", component: NotesComponent},
     ]
   }
