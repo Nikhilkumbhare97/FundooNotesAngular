@@ -9,9 +9,44 @@
   background-color: lightgrey;
 }
 
+.material-icons-outlined {
+  color: black;
+}
+
 .example-toolbar {
+  display: flex;
+  justify-content: flex-start;
   outline-style: solid;
   outline-color: darkgrey;
+}
+
+.search-bar {
+  padding-left: 6%;
+}
+
+@media screen and (max-width: 500px) {
+  .search-bar {
+    display: none;
+  }
+}
+
+.profile {
+  color: black;
+  padding-left: 60%
+}
+
+input[type=text] {
+  width: 250%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-shadow: grey;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 15px 12px 15px;
+
 }
 
 .example-is-mobile .example-toolbar {

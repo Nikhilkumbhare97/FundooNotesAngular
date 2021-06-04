@@ -1,20 +1,27 @@
 <div class="note-prop">
-    <div class="reminder prop" role="button"  matTooltip="Remind me" matTooltipClass="prop-tip" matTooltipPosition='below'></div>
-    <div class="collaborator prop" role="button" matTooltip="Collaborator" matTooltipPosition='below'></div>
-    <div class="back-img prop" role="button" matTooltip="Add image" matTooltipPosition='below'></div>
-    <div class="archive prop" role="button" matTooltip="Archive" matTooltipPosition='below'></div>
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-        <mat-icon>more_vert</mat-icon>
+  <div class="reminder prop" role="button" matTooltip="Remind me" matTooltipClass="prop-tip" matTooltipPosition='below'>
+  </div>
+  <div class="collaborator prop" role="button" matTooltip="Collaborator" matTooltipPosition='below'></div>
+  <div class="back-img prop" role="button" matTooltip="Add image" matTooltipPosition='below'></div>
+  <div class="archive prop" role="button" matTooltip="Archive" matTooltipPosition='below'></div>
+  <div mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" role="button" class="menu-button prop">
+    <mat-icon class="material-icons-outlined" matTooltip="menu" matTooltipPosition='below'>
+      more_vert
+    </mat-icon>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="deleteNote()">
+        <mat-icon>delete_forever</mat-icon>
+        <span>Delete Forever</span>
       </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>delete</mat-icon>
-          <span>Delete</span>
-        </button>
-  
-        <button mat-menu-item>
-          <mat-icon>label</mat-icon>
-          <span>Add Label</span>
-        </button>
-      </mat-menu>
+      <button mat-menu-item>
+        <mat-icon>delete</mat-icon>
+        <span>Trash</span>
+      </button>
+
+      <button mat-menu-item>
+        <mat-icon>label</mat-icon>
+        <span>Add Label</span>
+      </button>
+    </mat-menu>
+  </div>
 </div>

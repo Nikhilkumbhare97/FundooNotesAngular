@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NoteServiceService } from 'src/app/service/noteService/note-service.service';
+import { NoteComponent } from '../note/note.component';
 
 @Component({
   selector: 'app-update-note',
@@ -9,7 +10,7 @@ import { NoteServiceService } from 'src/app/service/noteService/note-service.ser
 })
 export class UpdateNoteComponent implements OnInit {
 
-  title: any
+  title: any;
   description: any;
 
   constructor(private dialogRef: MatDialogRef<UpdateNoteComponent>,
@@ -27,13 +28,15 @@ export class UpdateNoteComponent implements OnInit {
   }
 
   submit() {
+
+    let note = {
+      noteId: this.card.note.id,
+      title: this.title,
+      description: this.description,
+    };
+  
     let id = localStorage.getItem('id')
     console.log(id)
-    let note = {
-      noteId: [this.card.note.id],
-      title: [this.title],
-      description: [this.description]
-    };
     console.log('Updating the note', note);
     this.noteService.updateNotes(note, id).subscribe((resp: any) => {
       console.log(resp);
@@ -42,5 +45,4 @@ export class UpdateNoteComponent implements OnInit {
       console.log(error);
     });
   }
-
 }

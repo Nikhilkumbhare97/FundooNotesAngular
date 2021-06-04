@@ -1,28 +1,25 @@
 .card-container {
-    display: flex;
     margin-top: 25px;
-    padding: 2%;
     padding-bottom: 5%;
-    flex-flow: wrap;
   }
   
   .notes {
     padding: 0.5%;
     padding-bottom: 2%;
-    width: 15.5%;
-    justify-content: space-between;
+    max-width: 300px;
+    min-width: 150px;
+  }
+
+  @media screen and (max-width: 500px) {
+    .notes {
+      width: 100%;
+    }
   }
   
   .card-content {
     display: flex;
-    margin: 25px 15px 10px 25px;
     flex-flow:wrap;
-  }
-  
-  .mat-card-header-text {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    justify-content: center;
   }
   
   .div-card-content {
@@ -36,12 +33,6 @@
   
   .description {
    width: 100%;
-    word-wrap: break-word;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  .acitvate-overflow {
     word-wrap: break-word;
     overflow: hidden;
     text-overflow: ellipsis;

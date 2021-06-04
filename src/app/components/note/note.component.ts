@@ -1,5 +1,4 @@
 import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { NoteServiceService } from 'src/app/service/noteService/note-service.service';
 
 @Component({

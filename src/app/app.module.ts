@@ -30,6 +30,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { NotesComponent } from './components/notes/notes.component';
 import { NoteDisplayComponent } from './components/note-display/note-display.component';
 import { UpdateNoteComponent } from './components/update-note/update-note.component'
+import { GetAllArchiveComponent } from './components/get-all-archive/get-all-archive.component'
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
     NoteComponent,
     NoteDisplayComponent,
     NotesComponent,
-    UpdateNoteComponent
+    UpdateNoteComponent,
+    GetAllArchiveComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
