@@ -1,7 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NoteServiceService } from 'src/app/service/noteService/note-service.service';
-import { NoteComponent } from '../note/note.component';
 
 @Component({
   selector: 'app-update-note',

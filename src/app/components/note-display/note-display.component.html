@@ -1,7 +1,7 @@
 <div class="card-container">
     <div fxLayout="row wrap" class="card-content">
         <div fxFlex="25%" fxFlex.xs="100" fxFlex.md="33%" fxFlex.sm="50%" *ngFor="let note of notesArray" class="notes">
-            <mat-card class="example-card mat-elevation-z4" [style.backgroundColor]="note.color">
+            <mat-card class="example-card mat-elevation-z4">
                 <div fxLayout="column" fxLayoutAlign="space-between stretch" class="div-card-content">
                     <div class="title" fxFlex="25%" (click)="openDialog(note)">
                         <h2>{{ note.title }}</h2>
@@ -12,7 +12,7 @@
                     </div>
 
                     <div class="icons" fxFlex="25%">
-                        <app-icons class="icon-int"></app-icons>
+                        <app-icons class="icon-int" [card]="note" ></app-icons>
                     </div>
                 </div>
             </mat-card>

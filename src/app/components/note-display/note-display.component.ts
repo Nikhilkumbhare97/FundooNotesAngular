@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
 
 @Component({
@@ -10,13 +10,8 @@ import { UpdateNoteComponent } from '../update-note/update-note.component';
 export class NoteDisplayComponent implements OnInit {
 
   @Input()
-  isArchive: any;
-
-  @Input()
-  isTrash: any;
-
-  @Input()
   notesArray: any[] = [];
+  
   @Output() updateSignal = new EventEmitter<string>();
 
   constructor(private dialog: MatDialog) {
@@ -34,7 +29,7 @@ export class NoteDisplayComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((resp: any) => {
       if (resp.success)
-        this.updateSignal.emit('updated');
+        this.updateSignal.emit('update');
     })
   }
 

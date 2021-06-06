@@ -2,34 +2,6 @@
     display: none;
   }
   
-  .updateHeader {
-    background: hsl(221, 78%, 73%);
-  
-    .logo {
-      background: hsl(221, 78%, 73%);
-      padding: 1%;
-      margin-left: auto;
-      margin-right: auto;
-      margin: auto;
-      display: block;
-      align-items: center;
-      padding-top: 7px;
-    }
-  
-    .container-header {
-      font-weight: bold;
-      font-size: 20px;
-      align-items: center;
-      padding: 1%;
-      text-align: center;
-    }
-  
-    .close-button {
-      align-items: center;
-      padding: 1%;
-    }
-  }
-  
   .input-container {
     .title {
       .mat-input-element {
@@ -43,7 +15,6 @@
         padding: 0;
         margin: 0;
         width: 100%;
-        max-width: 100%;
         vertical-align: bottom;
         text-align: inherit;
       }
@@ -60,18 +31,13 @@
         padding: 0;
         margin: 0;
         width: 100%;
-        max-width: 100%;
         vertical-align: bottom;
         text-align: inherit;
       }
     }
   }
   
-  .mat-bluish {
-    background-color: hsla(44, 100%, 48%, 0.993);
-    color: black;
-  }
-  
-  .example-full-width {
-    width: 100%;
+  .buttons {
+    display: flex;
+    justify-content: space-between;
   }

@@ -9,21 +9,20 @@ import { NoteServiceService } from 'src/app/service/noteService/note-service.ser
 export class IconsComponent implements OnInit {
 
   @Input()
-  isArchive: any
-
-  @Input()
-  noteCard: any;
-
+  card: any;
+ 
   @Output() refreshRequest = new EventEmitter<any>();
 
   constructor(private noteService : NoteServiceService) { }
 
   ngOnInit(): void {
+  
   }
 
   deleteNote(){
+    console.log(this.card)
     let data = {
-      noteIdList: [this.noteCard.id],
+      noteIdList: [this.card.id],
       isDeleted: false,
     };
     console.log(data);
