@@ -3,7 +3,7 @@
   </div>
   <div class="collaborator prop" role="button" matTooltip="Collaborator" matTooltipPosition='below'></div>
   <div class="back-img prop" role="button" matTooltip="Add image" matTooltipPosition='below'></div>
-  <div class="archive prop" role="button" matTooltip="Archive" matTooltipPosition='below'></div>
+  <div class="archive prop" role="button" matTooltip="Archive" matTooltipPosition='below' (click)="archiveNote()"></div>
   <div mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" role="button" class="menu-button prop">
     <mat-icon class="material-icons-outlined" matTooltip="menu" matTooltipPosition='below'>
       more_vert

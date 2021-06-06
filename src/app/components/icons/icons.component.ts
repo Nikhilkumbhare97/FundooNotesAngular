@@ -9,6 +9,12 @@ import { NoteServiceService } from 'src/app/service/noteService/note-service.ser
 export class IconsComponent implements OnInit {
 
   @Input()
+  isArchive: any
+
+  @Input() 
+  isTrash: any
+  
+  @Input()
   card: any;
  
   @Output() refreshRequest = new EventEmitter<any>();
@@ -31,6 +37,22 @@ export class IconsComponent implements OnInit {
     this.noteService.deleteForever(data, id).subscribe((res) => {
       console.log(res);
       this.refreshRequest.emit({ refresh: true, message: 'deleted permanently' });
+    }, (error) => {
+      console.log(error)
+    })
+  }
+
+  archiveNote() {
+    let data = {
+      noteIdList: [this.card.id],
+      isArchived: true
+    };
+    console.log(data);
+    
+    let id = localStorage.getItem('id')
+    this.noteService.moveToArchive(data, id).subscribe((res) => {
+      console.log(res);
+      this.refreshRequest.emit({ refresh: true, message: 'archived' });
     }, (error) => {
       console.log(error)
     })
