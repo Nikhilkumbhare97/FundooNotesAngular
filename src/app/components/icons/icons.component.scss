@@ -42,3 +42,18 @@
 .menu-button {
   padding-top: 2%;
 }
+
+.circle {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  margin: 2px;
+  border: 1px solid;
+}
+.point {
+  cursor: pointer;
+}
+
+.color {
+  display: flex;
+}

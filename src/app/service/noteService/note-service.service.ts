@@ -99,4 +99,14 @@ export class NoteServiceService {
     }
     return this.httpService.Get(`${this.fundooUrl}notes/getTrashNotesList`, options);
   }
+
+  changeColor(id: any, data: any){
+    let options = {
+      headers: new HttpHeaders({
+        'Authorization': id,
+        'Content-type': 'application/json'
+      })
+    }
+    return this.httpService.Post(`${this.fundooUrl}notes/changesColorNotes`,data, options)
+  }
 }
