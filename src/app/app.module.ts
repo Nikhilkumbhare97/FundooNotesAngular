@@ -29,7 +29,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NotesComponent } from './components/notes/notes.component';
 import { NoteDisplayComponent } from './components/note-display/note-display.component';
-import { UpdateNoteComponent } from './components/update-note/update-note.component'
+import { UpdateNoteComponent } from './components/update-note/update-note.component';
+import { GetArchiveNotesComponent } from './components/get-archive-notes/get-archive-notes.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
     NoteDisplayComponent,
     NotesComponent,
     UpdateNoteComponent,
+    GetArchiveNotesComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

@@ -10,6 +10,12 @@ import { UpdateNoteComponent } from '../update-note/update-note.component';
 export class NoteDisplayComponent implements OnInit {
 
   @Input()
+  isArchive: any;
+
+  @Input()
+  isTrash: any;
+  
+  @Input()
   notesArray: any[] = [];
   
   @Output() updateSignal = new EventEmitter<string>();

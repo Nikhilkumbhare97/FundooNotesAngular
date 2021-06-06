@@ -79,4 +79,14 @@ export class NoteServiceService {
     }
     return this.httpService.Post(`${this.fundooUrl}notes/trashNotes`, note, options)
   }
+
+  getArchive(id: any){
+    let options = {
+      headers: new HttpHeaders({
+        'Authorization': id,
+        'Content-type': 'application/json'
+      })
+    }
+    return this.httpService.Get(`${this.fundooUrl}notes/getArchiveNotesList`, options)
+  }
 }
