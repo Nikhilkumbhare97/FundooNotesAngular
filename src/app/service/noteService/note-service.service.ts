@@ -67,4 +67,16 @@ export class NoteServiceService {
     }
     return this.httpService.Post(`${this.fundooUrl}notes/archiveNotes`, data, options);
   }
+
+  moveToTrash(note: any, id: any){
+    let options = {
+      headers: new HttpHeaders({
+        'Authorization': id,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        
+      })
+    }
+    return this.httpService.Post(`${this.fundooUrl}notes/trashNotes`, note, options)
+  }
 }

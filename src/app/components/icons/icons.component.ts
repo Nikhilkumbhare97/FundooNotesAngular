@@ -57,4 +57,20 @@ export class IconsComponent implements OnInit {
       console.log(error)
     })
   }
+
+  addToTrash() {
+    let token = localStorage.getItem('id')
+    console.log(token)
+    let data = {
+      noteIdList: [this.card.id],
+      isDeleted: true
+    }
+    console.log(data)
+    this.noteService.moveToTrash(data, token).subscribe((res) => {
+      console.log(res)
+      this.refreshRequest.emit({ refresh: true, message: 'deleted' })
+    }, (error) => {
+      console.log(error)
+    })
+  }
 }
