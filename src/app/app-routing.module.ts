@@ -7,6 +7,7 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { GetArchiveNotesComponent } from './components/get-archive-notes/get-archive-notes.component';
+import { GetTrashNotesComponent } from './components/get-trash-notes/get-trash-notes.component';
 
 const routes: Routes = [
   {
@@ -37,7 +38,7 @@ const routes: Routes = [
       {path: "", redirectTo: "notes", pathMatch: "full"},
       {path: "notes", component: NotesComponent},
       {path: "archives", component: GetArchiveNotesComponent},
-      {path: "trash", component: NotesComponent},
+      {path: "trash", component: GetTrashNotesComponent},
     ]
   }
 ];
