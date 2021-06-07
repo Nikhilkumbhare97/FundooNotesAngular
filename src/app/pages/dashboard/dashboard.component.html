@@ -1,16 +1,19 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar color="primary" class="example-toolbar">
-
-        <div mat-icon-button (click)="snav.toggle()">
-            <mat-icon class="material-icons-outlined">
-                menu
-            </mat-icon>
+        <div class="part1">
+            <div mat-icon-button (click)="snav.toggle()">
+                <mat-icon class="material-icons-outlined">
+                    menu
+                </mat-icon>
+            </div>
+            <img src="../../../assets/Images/keep_2020q4_48dp.png" class="logo-image" />
+            <h1 class="example-app-name">FUNDOO-NOTES</h1>
         </div>
-        <img src="../../../assets/Images/keep_2020q4_48dp.png" class="logo-image" />
-        <h1 class="example-app-name">FUNDOO-NOTES</h1>
+        
         <form class="search-bar">
             <input type="text" name="search" placeholder="Search..">
         </form>
+
 
         <div class="profile">
             <div mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">

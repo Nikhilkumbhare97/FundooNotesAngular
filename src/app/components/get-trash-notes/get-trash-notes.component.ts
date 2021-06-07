@@ -36,7 +36,7 @@ export class GetTrashNotesComponent implements OnInit {
     return note.isDeleted == true;
   }
   refreshAfterUpdation(event: any) {
-    if (event === 'update') {
+    if (event === 'deleted') {
       console.log('refreshed');
       this.getAllTrash();
     }

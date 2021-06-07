@@ -33,7 +33,7 @@ export class GetArchiveNotesComponent implements OnInit {
     return note.isArchived == true;
   }
   refreshAfterUpdation(event: any) {
-    if (event === 'update') {
+    if (event === 'archived') {
       console.log('refreshed');
       this.getArchives();
     }

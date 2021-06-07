@@ -10,14 +10,11 @@ import { NoteServiceService } from 'src/app/service/noteService/note-service.ser
 export class IconsComponent implements OnInit {
 
   @Input()
-  ngStyle: { 'background-color' : any; }
-  
-  @Input()
   isArchive: any
 
-  @Input() 
+  @Input()
   isTrash: any
-  
+
   @Input()
   card: any;
 
@@ -38,23 +35,23 @@ export class IconsComponent implements OnInit {
       { color: '#d7aefb' }
     ]
   ]
- 
+
   @Output() refreshRequest = new EventEmitter<any>();
 
-  constructor(private noteService : NoteServiceService, private router: Router) { }
+  constructor(private noteService: NoteServiceService, private router: Router) { }
 
   ngOnInit(): void {
-  
+
   }
 
-  deleteNote(){
+  deleteNote() {
     console.log(this.card)
     let data = {
       noteIdList: [this.card.id],
       isDeleted: false,
     };
     console.log(data);
-    
+
     let id = localStorage.getItem('id')
     this.noteService.deleteForever(data, id).subscribe((res) => {
       console.log(res);
@@ -70,12 +67,11 @@ export class IconsComponent implements OnInit {
       isArchived: true
     };
     console.log(data);
-    
+
     let id = localStorage.getItem('id')
     this.noteService.moveToArchive(data, id).subscribe((res) => {
-      console.log(res);
-      this.router.navigate(['/dashboard/notes']);
       this.refreshRequest.emit({ refresh: true, message: 'archived' });
+      console.log(res);
     }, (error) => {
       console.log(error)
     })
@@ -92,7 +88,6 @@ export class IconsComponent implements OnInit {
     this.noteService.moveToTrash(data, token).subscribe((res) => {
       console.log(res)
       this.refreshRequest.emit({ refresh: true, message: 'deleted' })
-      this.router.navigate(['']);
     }, (error) => {
       console.log(error)
     })
@@ -101,17 +96,17 @@ export class IconsComponent implements OnInit {
   changeColor(color: any) {
     this.card.color = color;
     let id = localStorage.getItem('id')
-    let data ={
+    let data = {
       noteIdList: [this.card.id],
       color: color,
-     }
-     console.log(data);
-     
-     this.noteService.changeColor(id, data).subscribe((res)=> {
-       console.log(res)
-       this.refreshRequest.emit({ refresh: true, message: 'colored'})
-     },(error)=> {
-       console.log(error)
-     })
+    }
+    console.log(data);
+
+    this.noteService.changeColor(id, data).subscribe((res) => {
+      console.log(res)
+      this.refreshRequest.emit({ refresh: true, message: 'colored' })
+    }, (error) => {
+      console.log(error)
+    })
   }
 }

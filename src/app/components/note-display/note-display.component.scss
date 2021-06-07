@@ -6,8 +6,7 @@
   .notes {
     padding: 0.5%;
     padding-bottom: 2%;
-    max-width: 300px;
-    min-width: 150px;
+    width: 300px;
   }
 
   @media screen and (max-width: 500px) {
@@ -18,8 +17,7 @@
   
   .card-content {
     display: flex;
-    flex-flow:wrap-reverse;
-    justify-content: center;
+    flex-flow: wrap;
   }
   
   .div-card-content {
@@ -38,11 +36,11 @@
     text-overflow: ellipsis;
   }
   
-  .icons {
-    height: 100%
+  .icon-int{
+    visibility:hidden;
   }
 
-  .icon-int{
-    width: 100%;
+  .card-container:hover .icon-int{
+    visibility: visible;
   }
   
