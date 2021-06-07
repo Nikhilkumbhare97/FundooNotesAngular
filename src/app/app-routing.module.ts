@@ -8,6 +8,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { GetArchiveNotesComponent } from './components/get-archive-notes/get-archive-notes.component';
 import { GetTrashNotesComponent } from './components/get-trash-notes/get-trash-notes.component';
+import { AuthGaurdGuard } from './authentication/auth-gaurd.guard'
 
 const routes: Routes = [
   {
@@ -34,6 +35,7 @@ const routes: Routes = [
   {
     path: "dashboard",
     component: DashboardComponent,
+    canActivate: [AuthGaurdGuard],
     children: [
       {path: "", redirectTo: "notes", pathMatch: "full"},
       {path: "notes", component: NotesComponent},
