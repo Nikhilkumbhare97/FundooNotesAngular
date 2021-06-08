@@ -48,7 +48,7 @@ import { GetTrashNotesComponent } from './components/get-trash-notes/get-trash-n
     NotesComponent,
     UpdateNoteComponent,
     GetArchiveNotesComponent,
-    GetTrashNotesComponent
+    GetTrashNotesComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

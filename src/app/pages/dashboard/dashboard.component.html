@@ -13,22 +13,21 @@
         <form class="search-bar">
             <input type="text" name="search" placeholder="Search..">
         </form>
-
-
+        
         <div class="profile">
             <div mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
                 <mat-icon>manage_accounts</mat-icon>
             </div>
-            <mat-menu #menu="matMenu">
+            <mat-menu #menu="matMenu" class="menu">
                 <div class="tool-name">
-                    <span>Name</span>
+                    <span>Nikhil Kumbhare</span>
                 </div>
                 <div class="tool-email">
-                    <span>Email</span>
+                    <span>nikhilkumbhare97@gmail.com</span>
                 </div>
                 <button mat-menu-item>
                     <a routerLink="/login">
-                        <span>Logout</span>
+                        <span class="logout">Logout</span>
                     </a>
                 </button>
                 
