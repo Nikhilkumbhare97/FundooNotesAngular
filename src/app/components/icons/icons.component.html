@@ -6,11 +6,12 @@
 
     <img src="../../../assets/Images/color_lens_black_24dp.svg" alt="color" width="25px" height="25px"
       [matMenuTriggerFor]="colorMenu" matTooltip="Change Color" #color />
+
     <mat-menu #colorMenu="matMenu" yPosition="above" xPosition="after" [overlapTrigger]="false">
       <div *ngFor="let arrayOfColors of colorPalette" fxLayout="row" fxLayoutAlign="space-between center" class="color">
         <div *ngFor="let backcolor of arrayOfColors">
-          <div [ngStyle]="{'background-color': backcolor.color}" class="circle"
-            (click)="changeColor(backcolor.color)"></div>
+          <div [ngStyle]="{'background-color': backcolor.color}" class="circle" (click)="changeColor(backcolor.color)">
+          </div>
         </div>
       </div>
     </mat-menu>

@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 15px" #createCard class="head">
+<div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 15px" #createCard class="head" >
     <mat-card class="mat-elevation-z5 outline take-note-card" *ngIf="!clicked" (click)="clicked = !clicked">
         <div fxLayout="row" fxLayoutAlign="space-between center" class="take-note">
             <div>
@@ -11,7 +11,7 @@
         </div>
     </mat-card>
 
-    <mat-card *ngIf="clicked" class="mat-elevation-z5 outline take-note-card" fxLayout="column" >
+    <mat-card *ngIf="clicked" class="mat-elevation-z5 outline take-note-card" fxLayout="column">
         <div fxLayout="column" class="mat-elevation-z52">
             <mat-form-field>
                 <mat-label>Title</mat-label>
@@ -25,7 +25,10 @@
 
             <div class="foot">
                 <app-icons></app-icons>
-                <button class="close-button" type="button" (click)="createNote()">Close</button>
+                <div class="example-label"></div>
+                <div class="example-button-row">
+                    <button class="button" mat-button (click)="createNote()">Close</button>
+                </div>
             </div>
         </div>
     </mat-card>

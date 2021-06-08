@@ -21,7 +21,7 @@ export class NotesComponent implements OnInit {
     let id = localStorage.getItem('id')
     this.noteService.getAllNotes(id).subscribe((resp: any) => {
       console.log(resp.data.data);
-      this.AllNotes = resp.data.data.filter(this.noteFilteration);
+      this.AllNotes = resp.data.data.filter(this.noteFilteration).reverse();
     }, (error: any) => {
       console.log(error);
     });
