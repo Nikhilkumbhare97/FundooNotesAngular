@@ -24,7 +24,7 @@ export class GetArchiveNotesComponent implements OnInit {
     let id = localStorage.getItem('id')
     this.noteService.getArchive(id).subscribe((res: any)=> {
       console.log(res.data.data)
-      this.AllNotes = res.data.data.filter(this.filterNotes)
+      this.AllNotes = res.data.data.filter(this.filterNotes).reverse();
     }, (error)=> {
       console.log(error)
     })

@@ -27,7 +27,7 @@ export class GetTrashNotesComponent implements OnInit {
     let id = localStorage.getItem('id')
     this.noteService.getTrash(id).subscribe((res: any)=>{
       console.log(res.data.data)
-      this.AllNotes = res.data.data.filter(this.filterNotes)
+      this.AllNotes = res.data.data.filter(this.filterNotes).reverse();
     },(error)=> {
       console.log(error)
     })

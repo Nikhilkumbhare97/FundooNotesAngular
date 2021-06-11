@@ -13,12 +13,17 @@
         <form class="search-bar">
             <input type="text" name="search" placeholder="Search..">
         </form>
-        
+
         <div class="profile">
             <div mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                <mat-icon>manage_accounts</mat-icon>
+                <mat-icon>account_circle</mat-icon>
             </div>
-            <mat-menu #menu="matMenu" class="menu">
+            <mat-menu #menu="matMenu" class="menu-class">
+                <div class="head-icon">
+                    <span class="material-icons">
+                        account_circle
+                    </span>
+                </div>
                 <div class="tool-name">
                     <span>Nikhil Kumbhare</span>
                 </div>
@@ -30,7 +35,7 @@
                         <span class="logout">Logout</span>
                     </a>
                 </button>
-                
+
             </mat-menu>
         </div>
 

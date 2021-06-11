@@ -12,6 +12,7 @@ export class NoteComponent implements OnInit {
 
   @Input()
   clicked: any;
+  
   @Output() sendEventToGetAllNotes = new EventEmitter<string>();
 
   @ViewChild('createCard')

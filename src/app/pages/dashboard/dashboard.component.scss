@@ -114,10 +114,12 @@ h1.example-app-name {
 .tool-name{
   font-size: 25px;
   padding-left: 5%;
+  font-weight: 500;
 }
 
 .tool-email{
-  font-size: 15px;
+  display: flex;
+  font-size: 16px;
 }
 
 .logout{
@@ -125,4 +127,14 @@ h1.example-app-name {
   font-family: sans-serif;
   font-size: 15px;
   padding-left: 35%;
+}
+
+.menu-class{
+  margin: 5%;
+}
+
+.head-icon{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5%;
 }
